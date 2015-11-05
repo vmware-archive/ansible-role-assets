@@ -1,0 +1,123 @@
+#
+#  Copyright 2015 VMware, Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+
+- name: create downloads directory
+  file:
+    dest: "{{ downloads_dir }}"
+    state: directory
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
+    mode: 0755
+
+- name: get esx hypervisor iso file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_esxi_iso }}"
+  register: esxiiso
+  tags:
+    - esx
+
+- name: pull esxi iso for future downloads (may take many minutes)
+  get_url:
+    dest: "{{ downloads_dir }}/{{ chaperone_esxi_iso }}"
+    url: "{{ chaperone_esxi_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: not (esxiiso.stat.exists and (esxiiso.stat.md5 == "{{ chaperone_esxi_md5 }}"))
+  tags:
+    - esx
+
+- name: get vCenter Appliance file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_vcsa_iso }}"
+  register: vcsaiso
+  when: download_files
+  tags:
+    - vcsa
+
+- name: pull vCenter Appliance ISO for future downloads (may take many minutes)
+  get_url:
+    force: yes
+    dest: "{{ downloads_dir }}/{{ chaperone_vcsa_iso }}"
+    url: "{{ chaperone_vcsa_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: download_files and (not vcsaiso.stat.exists or (vcsaiso.stat.md5 != "{{ chaperone_vcsa_md5 }}"))
+  tags:
+    - vcsa
+
+- name: get vROps OVA file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_vrops_ova }}"
+  register: vropsova
+  when: download_files
+  tags:
+    - vrops
+
+- name: pull vROps OVA for future downloads (may take many minutes)
+  get_url:
+    force: yes
+    dest: "{{ downloads_dir }}/{{ chaperone_vrops_ova }}"
+    url: "{{ chaperone_vrops_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: download_files and (not vropsova.stat.exists or (vropsova.stat.md5 != "{{ chaperone_vrops_md5 }}"))
+  tags:
+    - vrops
+
+- name: get vRLI OVA file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_vrli_ova }}"
+  register: vrliova
+  when: download_files
+  tags:
+    - vrli
+
+- name: pull vRLI OVA for future downloads (may take many minutes)
+  get_url:
+    force: yes
+    dest: "{{ downloads_dir }}/{{ chaperone_vrli_ova }}"
+    url: "{{ chaperone_vrli_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: download_files and (not vrliova.stat.exists or (vrliova.stat.md5 != "{{ chaperone_vrli_md5 }}"))
+  tags:
+    - vrli
+
+- name: get vRB OVA file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_vrb_ova }}"
+  register: vrbova
+  when: download_files
+  tags:
+    - vrb
+
+- name: pull vRB OVA for future downloads (may take many minutes)
+  get_url:
+    force: yes
+    dest: "{{ downloads_dir }}/{{ chaperone_vrb_ova }}"
+    url: "{{ chaperone_vrb_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: download_files and (not vrbova.stat.exists or (vrbova.stat.md5 != "{{ chaperone_vrb_md5 }}"))
+  tags:
+    - vrb
+
+- name: get vRA OVA file stats
+  stat: path="{{ downloads_dir }}/{{ chaperone_vra_ova }}"
+  register: vraova
+  when: download_files
+  tags:
+    - vra
+
+- name: pull vRA OVA for future downloads (may take many minutes)
+  get_url:
+    force: yes
+    dest: "{{ downloads_dir }}/{{ chaperone_vra_ova }}"
+    url: "{{ chaperone_vra_url }}"
+    timeout: "{{ downloads_timeout }}"
+  when: download_files and (not vraova.stat.exists or (vraova.stat.md5 != "{{ chaperone_vra_md5 }}"))
+  tags:
+    - vra
