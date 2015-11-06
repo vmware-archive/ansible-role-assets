@@ -17,6 +17,7 @@ new_priv_key: "~{{ sshkeys_user }}/.ssh/id_priv_new"
 new_pub_key: "{{ new_priv_key }}.pub"
 update_pkg_cache: "yes"
 
+download_files: True
 downloads_dir: /var/www/html/downloads
 downloads_timeout: 10
 ovftool: /usr/local/bin/ovftool/ovftool
