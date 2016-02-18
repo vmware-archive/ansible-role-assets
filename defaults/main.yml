@@ -17,43 +17,4 @@
 download_files: False
 downloads_dir: /var/www/html/downloads
 downloads_timeout: 10
-
-chaperone_depot_zip: "VMware-ESXi-6.0.0-2494585-depot.zip"
-chaperone_depot_zip_md5: "bebc48450b9743c56073602931d63600"
-chaperone_depot_zip_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2494585/publish/VMware-ESXi-6.0.0-2494585-depot.zip"
-
-chaperone_ovftool_zip: "VMware-ovftool-4.1.0-2459827-lin.x86_64.zip"
-chaperone_ovftool_md5: "63698e602af6e24640146a6592348c99"
-chaperone_ovftool_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2459827/publish/VMware-ovftool-4.1.0-2459827-lin.x86_64.zip"
-
-chaperone_esxi_iso: "VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso"
-chaperone_esxi_md5: "478e2c6f7a875dd3dacaaeb2b0b38228"
-chaperone_esxi_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2494585/publish/VMware-VMvisor-Installer-6.0.0-2494585.x86_64.iso"
-
-chaperone_vcsa_iso: "VMware-VCSA-all-6.0.0-3040890.iso"
-chaperone_vcsa_md5: "1652d41ae6837b23e177443640579274"
-chaperone_vcsa_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-3040890/publish/VMware-VCSA-all-6.0.0-3040890.iso"
-
-chaperone_nsx_ova: "VMware-NSX-Manager-6.1.4-2691049.ova"
-chaperone_nsx_ova_md5: "972754d48346c469e3d32aea5e3d147b"
-chaperone_nsx_ova_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2691049/publish/VMware-NSX-Manager-6.1.4-2691049.ova"
-
-chaperone_vrops_ova: "vRealize-Operations-Manager-Appliance-6.0.2.2777062_OVF10.ova"
-chaperone_vrops_md5: "cb4f67d9da7a131553efc9ba4377e9aa"
-chaperone_vrops_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2777062/publish/vRealize-Operations-Manager-Appliance-6.0.2.2777062_OVF10.ova"
-
-chaperone_vrli_ova: "VMware-vRealize-Log-Insight-3.0.0-3021606.ova"
-chaperone_vrli_md5: "f6b773ae3f913709fc04eff1c36165e5"
-chaperone_vrli_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-3021606/publish/VMware-vRealize-Log-Insight-3.0.0-3021606.ova"
-
-chaperone_vrb_ova: "vRealize-Business-Standard-6.0.0.0-2323216_OVF10.ova"
-chaperone_vrb_md5: "d5ea907a0b29601858f10f0927bac15b"
-chaperone_vrb_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2323216/publish/exports/ova/vRealize-Business-Standard-6.0.0.0-2323216_OVF10.ova"
-
-chaperone_vra_ova: "VMware-vCAC-Appliance-6.2.1.0-2553372_OVF10.ova"
-chaperone_vra_md5: "f98a3003d0391b71858c90ce14f2754d"
-chaperone_vra_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2553372/publish/exports/ova/VMware-vCAC-Appliance-6.2.1.0-2553372_OVF10.ova"
-
-chaperone_vio_ova: "VMware-OpenStack-1.0.0.0-2824223_OVF10.ova"
-chaperone_vio_ova_md5: "513772592bfd9bf30393a01aa1a15114"
-chaperone_vio_ova_url: "http://build-squid.eng.vmware.com/build/mts/release/bora-2824223/publish/openstack_vapp/exports/ova/VMware-OpenStack-1.0.0.0-2824223_OVF10.ova"
+assets: {}
