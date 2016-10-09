@@ -26,7 +26,7 @@
   stat: path="{{ downloads_dir }}/{{ item.key }}"
   when: download_files and assets
   register: file_stats
-  with_dict: assets
+  with_dict: "{{ assets }}"
 
 - name: "pull files as needed (will take many minutes the first time)"
   get_url:
@@ -35,4 +35,4 @@
     url: "{{ item.item.value.url }}"
     timeout: "{{ downloads_timeout }}"
   when: download_files and (not item.stat.exists or (item.stat.checksum != item.item.value.checksum))
-  with_items: file_stats.results
+  with_items: "{{ file_stats.results }}"
