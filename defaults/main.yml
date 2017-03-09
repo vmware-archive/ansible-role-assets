@@ -17,4 +17,5 @@
 download_files: False
 downloads_dir: /var/www/html/downloads
 downloads_timeout: 10
+assets_validate_certs: True
 assets: {}

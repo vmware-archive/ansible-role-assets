@@ -1,0 +1,14 @@
+galaxy_info:
+  author: VMware DevOps & CNA
+  description: Download and verify files once for use with minimal bandwidth
+  company: VMware
+  license: Apache 2.0
+  min_ansible_version: 2.0
+
+  platforms:
+  - name: Linux
+    versions:
+    - all
+  galaxy_tags:
+    - download
+    - artifact
