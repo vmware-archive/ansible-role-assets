@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
-  remote_user: root
-  sudo: yes
 
   vars:
     downloads_dir: /tmp/test-assests
@@ -15,8 +13,6 @@
     - assets
 
 - hosts: localhost
-  remote_user: root
-  sudo: yes
   vars:
     downloads_dir: /tmp/test-assests
     download_files: False
@@ -29,8 +25,6 @@
     - assets
 
 - hosts: localhost
-  remote_user: root
-  sudo: yes
   vars:
     downloads_dir: /tmp/test-assests
     download_files: True
@@ -39,8 +33,6 @@
     - assets
 
 - hosts: localhost
-  remote_user: root
-  sudo: yes
   vars:
     downloads_dir: /tmp/test-assests
     download_files: False

@@ -28,6 +28,9 @@ downloads_dir: /var/www/html/downloads
 # The timeout on downloads before giving up.
 downloads_timeout: 10
 
+# validate certificates of the remote server?
+assetes_validate_certs: True|False
+
 # a dict of assets to download
 # The keys of assets are what we will name the file downloaded from url.
 # Checksum is the sha1 sum of the asset.
