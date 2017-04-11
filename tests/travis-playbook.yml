@@ -1,0 +1,8 @@
+---
+- hosts:
+  - centos-7
+  - photon
+  - ubuntu-xenial
+
+  roles:
+    - assets

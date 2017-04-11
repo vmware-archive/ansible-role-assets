@@ -1,0 +1,20 @@
+download_files: True
+downloads_dir: /tmp/test-downloads
+downloads_timeout: 10
+
+assets:
+  test-text:
+    description: notice.txt
+    checksum: e6b8bfe20303703e30acf9e67d012060
+    url: "https://github.com/vmware/photon-controller/releases/download/v1.1.1/Notice.txt"
+    validate_certs: False
+  test-bin:
+    description: google logo
+    checksum: 80fa4bcab0351fdccb69c66fb55dcd00
+    url: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+    validate_certs: False
+  ova-test:
+    description: "Tiny Linux VM.ova"
+    checksum: 0b458e68663366185fbd563c319d611b
+    url: "https://communities.vmware.com/servlet/JiveServlet/downloadBody/21621-102-3-28798/Tiny%20Linux%20VM.ova"
+    validate_certs: False

@@ -34,5 +34,6 @@
     dest: "{{ downloads_dir }}/{{ item.item.key }}"
     url: "{{ item.item.value.url }}"
     timeout: "{{ downloads_timeout }}"
+    validate_certs: "{{ item.item.value.validate_certs | default(assets_validate_certs) }}"
   when: download_files and (not item.stat.exists or (item.stat.checksum != item.item.value.checksum))
   with_items: "{{ file_stats.results }}"
