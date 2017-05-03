@@ -12,8 +12,6 @@ install:
   - pip install molecule
   # - pip install required driver (e.g. docker, python-vagrant, shade)
   - pip install docker
-  - mkdir tests/roles
-  - ln -s ../ tests/roles/govc
 script:
   - >
     sed -i.orig 's;  playbook.*;  playbook: tests/travis-playbook.yml;' molecule.yml
