@@ -3,4 +3,4 @@
   - all
 
   roles:
-    - ansible-role-assets
+    - assets
