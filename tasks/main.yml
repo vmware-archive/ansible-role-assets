@@ -35,5 +35,18 @@
     url: "{{ item.item.value.url }}"
     timeout: "{{ downloads_timeout }}"
     validate_certs: "{{ item.item.value.validate_certs | default(assets_validate_certs) }}"
+    mode: 0755
   when: download_files and (not item.stat.exists or (item.stat.checksum != item.item.value.checksum))
   with_items: "{{ file_stats.results }}"
+
+- name: Install and setup nginx for http host
+  include_role:
+    name: jdauphant.nginx
+  vars:
+    nginx_sites:
+      assets_hosting:
+        - "listen {{ assets_http_port }}"
+        - server_name localhost
+        - "root {{ downloads_dir }}"
+        - "location / { autoindex on; }"
+  when: assets_http_hosted
