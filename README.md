@@ -1,7 +1,6 @@
 # ansible-role-assets
 
-[![Build Status](https://travis-ci.org/tompscanlan/ansible-role-assets.svg?branch=master)](https://travis-ci.org/tompscanlan/ansible-role-assets)
-
+[![Build Status](https://travis-ci.org/vmware/ansible-role-assets.svg?branch=master)](https://travis-ci.org/vmware/ansible-role-assets)
 Ansible playbook to automate downloading file assets, and optionally
 hosting them locally via http.
 
