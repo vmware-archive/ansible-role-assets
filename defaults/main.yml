@@ -19,3 +19,7 @@ downloads_dir: /var/www/html/downloads
 downloads_timeout: 10
 assets_validate_certs: True
 assets: {}
+
+# should we raise a web server to host the files for download?
+assets_http_hosted: False
+assets_http_port: 8484
