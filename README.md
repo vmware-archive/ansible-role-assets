@@ -1,6 +1,6 @@
 # ansible-role-assets
 
-[![Build Status](https://travis-ci.org/tompscanlan/ansible-role-assets.svg?branch=master)](https://travis-ci.org/tompscanlan/ansible-role-assets)
+[![Build Status](https://travis-ci.org/vmware/ansible-role-assets.svg?branch=master)](https://travis-ci.org/vmware/ansible-role-assets)
 
 Ansible playbook to automate downloading file assets, and optionally
 hosting them locally via http.
@@ -14,7 +14,7 @@ the file is lost.
 
 ## Requirements
 
-- downloads_dir that is creatable and writable by the ansible_ssh_user
+- downloads\_dir that is creatable and writable by the ansible\_ssh\_user
 - A valid dict of assets
 - if needing to host the assets via http, ensure ansible role jdauphant.nginx
   is available and set `assets_http_hosted` to True
