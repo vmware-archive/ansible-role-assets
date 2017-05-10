@@ -1,5 +1,5 @@
 #
-#  Copyright 2015 VMware, Inc.
+#  Copyright 2015-2017 VMware, Inc.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -14,12 +14,40 @@
 #  limitations under the License.
 #
 
+# True to download, False to skip downloading all assets (default)
 download_files: False
+
+# The directory into which downloaded assets are placed.
 downloads_dir: /var/www/html/downloads
+
+# Timeout in seconds for URL request
 downloads_timeout: 10
+
+
+# False means SSL certificates will not be validated.
+# This should only be used on personally controlled sites using self-signed certificates.
 assets_validate_certs: True
+
+
+# a dict of assets to download
+# The keys of assets are what we will name the file downloaded from url.
+# Checksum is the sha1 sum of the asset.
+# Url is a valid, reachable url of the asset.
+# Example:
+#assets:
+#  google-image.png:
+#    description: google image
+#    checksum: 26f471f6ebe3b11557506f6ae96156e0a3852e5b
+#    url: https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png
+#  index.html:
+#    description: "descriptive use only, not mandatory"
+#    checksum: "3af37af6ebe3b11557506f6ae96156e0a381211e"
+#    url: "http://some.url/to/a/file"
 assets: {}
 
-# should we raise a web server to host the files for download?
+# Boolean, should we raise a web server to host the assets for
+# future download?
 assets_http_hosted: False
+
+# port to host the http server on
 assets_http_port: 8484
