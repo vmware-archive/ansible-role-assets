@@ -6,15 +6,15 @@ galaxy_info:
   min_ansible_version: 2.0
 
   platforms:
-  - name: Photon Linux
+  - name: GenericLinux
     versions:
-    - 1.0
+    - any
 
   - name: Fedora
     versions:
     - 24
 
-  - name: CentOS
+  - name: EL
     versions:
     - 7
 
