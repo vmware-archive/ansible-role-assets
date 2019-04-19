@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright © 2017 VMware, Inc. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-only
 
 set -e
 
