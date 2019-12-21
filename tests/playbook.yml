@@ -10,6 +10,7 @@
       assets_http_hosted: true
       assets_http_port: 9898
   post_tasks:
-    - wait_for:
+    - name: wait for port up
+      wait_for:
         timeout: 60
         port: 9898
